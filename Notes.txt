@@ -1,0 +1,62 @@
+RabbitMQ :
+
+Message broker that implements AMQP- Advance Message Quing Protocol.
+AMQP standardizes messaging using producers, Broker and Consumers.
+
+
+Message Broker(Postal Service)
+Asynchronious Communication
+
+		/-------------> Queue ----> Consumer
+Producer ----> EXCHANGE  -----> Queue ----> Consumer
+		\-------------> Queue ----> Consumer
+Exchange:
+brain behind rabbitmq
+Ex- like a inner working of post office
+
+
+# Message distribution depends on exchange type.
+# There are four type of xchage :
+		- Direct
+		- Fanout
+		- Topic
+		- Headers
+
+
+#Direct Exchange : 
+ - In this type of exchange, Message is directly routed to the queue 
+    whose binding key matches with the routing key of the message. 
+
+#Fanout Exchange :
+  - In this type of exchange, Message is routed to the 
+    all the queues which are bound to it.
+
+#Topic Exchange : 
+   - In this type of exchange, Message is routed to the queue on the basis of
+     wildcard matches between routing key and binding key.
+
+#Header Exchange : 
+   - In this type of exchange, Header attribute is used for routing
+	
+
+
+#Queue:
+ - It is buffer that stores a message that are sent from the exchange to queues.
+ * Properties of queue :
+	1) Durability : 
+		i) Durable: If we mark queue as Durable, then it will survive even after server restarts.
+	        ii) Transient: If we mark exchange as Transient, then it will not survive after server restarts.
+	2) Arguments : 
+		
+
+#Bindings : A relationship between Exchange and Queue.
+	   - It is used to configure relation betn xchnage and queue.	
+
+#Connection: TCP connection betn our application and rabbitMQ broker.
+#Channel : Virtual connection inside a connection
+	   - Publishing or consuming a message from queue will happen over a channel.
+
+
+When producer creates a message it will not directly go to queue
+instead it will go to the exchanges, then routing agent will read and send it to the appropriate queue.
+

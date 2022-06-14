@@ -1,0 +1,38 @@
+User ID :	mngr415723
+Password :	pYjupAr
+
+Steps: 
+1) Create Maven project
+2) Create packages for 
+	i) Page Objects.
+	ii) Test Cases.
+	iii) TestData
+	iv) Utilities
+	
+3) Create Folders for Driver & Screenshot 
+
+4) Update pom.xml
+	- Add Java Selenium dependency.
+	- testNG dependency
+	- Apache POI
+	- Apache POI -ooxml
+	- extentreports
+	- commoms-lang3
+	- commons-io
+	- log4j	
+
+5) Add chromedriver to Driver folder
+
+6) Create class in pageObject package for LoginPage
+	- locate all the required elems using @FindBy
+	- Create methods i.e setUserName, setPassWord, clickOnSubmit.
+7) Create Base Class for all the common data of the project
+	- Ex: BaseURL/userName/pwd/WebDriver driver
+	- create common methods like :
+		-launchBrowser();
+		-killBrowser();
+8) Create LoginTest class in TestCases packages.
+	-extend it to the base class.
+	-create a method for loginTest
+		- By creating object og LoginPage, You can use the webelements stored.
+
